@@ -1,0 +1,13 @@
+.background{
+    height: 100vh;
+    width: auto;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    font-size: 40px;
+    font-family: Tahoma, sans-serif;
+    color: blanchedalmond;
+}    
