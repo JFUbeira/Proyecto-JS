@@ -1,3 +1,61 @@
+/* Navbar start */
+.navbar{
+    background-color: black;
+}
+
+.navbar-brand{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding-left: 25px;
+    letter-spacing: 3px;
+}
+
+.nav-link{
+    text-transform: uppercase;
+}
+
+/* .nav-link:hover{
+    color: $color1;
+} */
+
+/* Navbar end */
+
+.tienda {
+    width: 100%;
+    min-height: 200px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 400px);
+}
+.tienda .merch {
+    border: 0.1px solid rgba(131, 131, 131, 0.555);
+    background-size: cover;
+    background-position: center;
+}
+
+.merchDescription {
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 15px;
+    font-size: 22px;
+}
+
+.sinStock {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 30px;
+    right: 8px;
+}
+
+.footerTienda{
+    height: 108px;
+    background-color: black;
+}
+
 .background{
     height: 100vh;
     width: auto;
@@ -6,8 +64,119 @@
     justify-content: center;
 }
 
-h2{
-    font-size: 40px;
+.itemAdded{
+    font-size: 30px;
     font-family: Tahoma, sans-serif;
-    color: blanchedalmond;
-}    
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 5px;
+    animation-name: showUp;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    opacity: 0;
+    animation-timing-function: ease-in;
+}
+
+.fa-cart-plus {
+    color: white;
+    text-shadow: 0 0 4px rgb(194, 67, 141), 0 0 8px rgb(194, 67, 141) !important;
+}
+
+
+@keyframes showUp {
+    0% {
+        opacity: 100;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media only screen and (min-width: 568px) {
+    .navbar-brand {
+        font-size: 30px;
+    }
+    form {
+        height: 60px;
+        font-size: 20px;
+    }
+    .anexate {
+        bottom: 22px;
+    }
+    input[type=text] {
+        position: relative;
+        bottom: 27px;
+        width: 320px;
+        font-size: 16px;
+    }
+    input[type=submit] {
+        position: relative;
+        bottom: 22px;
+    }
+    .sinStock {
+        position: relative;
+        top: 42px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .tienda {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 400px);
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .galeria {
+        grid-template-rows: repeat(7, 350px);
+    }
+    .tienda {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 80vh);
+    }
+    .tienda .merch {
+        border-color: black;
+        position: relative;
+        top: 150px;
+        overflow: hidden;
+        height: 60vh;
+    }
+    .footerTienda {
+        z-index: 5;
+        padding-top: 40px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar-brand {
+        font-size: 40px;
+    }
+    .dark {
+        background-color: black;
+    }
+    .anexate {
+        justify-content: center;
+        display: flex;
+        right: 240px;
+        top: 5px;
+    }
+    input[type=text] {
+        bottom: 38px;
+        left: 130px;
+    }
+    input[type=submit] {
+        bottom: 34px;
+        left: 142.5px;
+    }
+    footer {
+        letter-spacing: 5px;
+        font-size: 40px;
+    }
+    .sinStock {
+        right: 140px;
+        position: relative;
+        top: 55px;
+    }
+}
