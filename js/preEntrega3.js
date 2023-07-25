@@ -18,19 +18,16 @@ const shoppingCart = []
 for (let i = 0; i < stock.length; i++) {
     let button = document.getElementById('button' + i)
     button.addEventListener('click', () => addToCart(stock[i]))
-}
 
-// function addToCart(product) {
-//     shoppingCart.push(product)
-//     let notification = document.getElementById('notification')
-//     notification.textContent = 'Se agregó un(a) ' + product.itemName + ' al carrito.'
-//     console.log(shoppingCart);
-// }
+    let productDescription = document.getElementById("product" + (i + 1))
+    productDescription.textContent = stock[i].itemName + ' $' + stock[i].price
+}
 
 function addToCart(product) {
     shoppingCart.push(product)
     let notification = document.getElementById('notification')
-    notification.textContent = 'Se agregó un(a) ' + product.itemName + ' al carrito.'
+    let cartTotal = shoppingCart.reduce((total, product) => total + product.price, 0)
+    notification.textContent = 'Se agregó un(a) ' + product.itemName + ' al carrito. Subtotal: $' + cartTotal
     notification.classList.remove('itemAdded')
     void notification.offsetWidth
     notification.classList.add('itemAdded')
@@ -41,8 +38,12 @@ function addToCart(product) {
 }
 
 
-
-
+// function addToCart(product) {
+//     shoppingCart.push(product)
+//     let notification = document.getElementById('notification')
+//     notification.textContent = 'Se agregó un(a) ' + product.itemName + ' al carrito.'
+//     console.log(shoppingCart);
+// }
 
 
 // let button1 = document.getElementById('button1')
@@ -73,4 +74,14 @@ function addToCart(product) {
 //     console.log(shoppingCart)
 // }
 
+// const product1Description = document.getElementById("product1") 
+// product1Description.textContent = product1.itemName + ' $' + product1.price
 
+// const product2Description = document.getElementById("product2")
+// product2Description.textContent = product2.itemName + ' $' + product2.price
+
+// const product3Description = document.getElementById("product3")
+// product3Description.textContent = product3.itemName + ' $' + product3.price
+
+// const product4Description = document.getElementById("product4")
+// product4Description.textContent = product4.itemName + ' $' + product4.price
