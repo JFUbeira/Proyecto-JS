@@ -1,17 +1,24 @@
-class Product {
-    constructor(id, itemName, price){
-        this.id = id
-        this.itemName = itemName
-        this.price = parseFloat(price)
-    }
+// class Product {
+//     constructor(id, itemName, price){
+//         this.id = id
+//         this.itemName = itemName
+//         this.price = parseFloat(price)
+//     }
+// }
+
+// const product1 = new Product(1, 'Remera', 7500)
+// const product2 = new Product(2, 'Buzo', 19000)
+// const product3 = new Product(3, 'Campera', 34000)
+// const product4 = new Product(4, 'Top', 9000)
+
+const getStock = async () => {
+    const response = await fetch("../data/data.json")
+    return await response.json()
 }
 
-const product1 = new Product(1, 'Remera', 7500)
-const product2 = new Product(2, 'Buzo', 19000)
-const product3 = new Product(3, 'Campera', 34000)
-const product4 = new Product(4, 'Top', 9000)
+const stock = await getStock()
 
-const stock = [product1, product2, product3, product4]
+// const stock = [product1, product2, product3, product4]
 
 const shoppingCart = []
 
