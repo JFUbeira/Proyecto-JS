@@ -21,15 +21,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h2>${product.itemName}</h2>
                 <h3>$${product.price}</h3>
                 <img src="${product.imgUrl}" alt="${product.itemName} Image">
-                <!-- Agrega más detalles o estilos según tus necesidades -->
+                <div>
+                    <button id="addToCartButton" class="btn btn-info">Agregar al carrito</button>
+                </div>   
             </div>
         `
 
         cardSection.innerHTML = productDetailsHTML
+
+        const addToCartButton = document.getElementById("addToCartButton");
+        addToCartButton.addEventListener("click", () => addToCart(product));
     };
 
     renderProductDetails()
 })
-    
+
+const getStock = async () => {
+    const response = await fetch("../data/data.json")
+    return await response.json()
+}
+
+const stock = await getStock()
+
+const shoppingCart = []
+
+function addToCart(product) {
+    shoppingCart.push(product)
+    console.log(shoppingCart)
+}
 
 
