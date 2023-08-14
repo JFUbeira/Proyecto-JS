@@ -52,7 +52,7 @@
 }
 
 .footerTienda{
-    height: 108px;
+    height: 40px;
     background-color: black;
 }
 
@@ -134,18 +134,19 @@
     }
     .tienda {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(1, 80vh);
+        grid-template-rows: repeat(1, 100vh);
     }
     .tienda .merch {
         border-color: black;
         position: relative;
         top: 150px;
-        overflow: hidden;
+        /* overflow: hidden; */
         height: 60vh;
     }
     .footerTienda {
         z-index: 5;
         padding-top: 40px;
+        height: 10px;
     }
 }
 
@@ -167,7 +168,7 @@
         left: 130px;
     }
     input[type=submit] {
-        bottom: 34px;
+        bottom: 30px;
         left: 142.5px;
     }
     footer {
@@ -178,5 +179,9 @@
         right: 140px;
         position: relative;
         top: 47.5px;
+    }
+    .footerTienda{
+        padding-top: 40px;
+        height: 80px;
     }
 }
