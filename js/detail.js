@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cardSection.innerHTML = productDetailsHTML
 
-        const addToCartButton = document.getElementById("addToCartButton");
-        addToCartButton.addEventListener("click", () => addToCart(product));
+        const addToCartButton = document.getElementById("addToCartButton")
+        addToCartButton.addEventListener("click", () => addToCart(product))
     };
 
     renderProductDetails()
@@ -46,8 +46,10 @@ const stock = await getStock()
 const shoppingCart = []
 
 function addToCart(product) {
-    shoppingCart.push(product)
-    console.log(shoppingCart)
+    let currentCart = JSON.parse(localStorage.getItem('shoppingCart')) || []
+    currentCart.push(product)
+    localStorage.setItem('shoppingCart', JSON.stringify(currentCart))
+    console.log(currentCart)
 }
 
 

@@ -1,3 +1,17 @@
+const getStock = async () => {
+    const response = await fetch("../data/data.json")
+    return await response.json()
+}
+
+const stock = await getStock()
+
+const shoppingCart = []
+
+const storedCart = JSON.parse(localStorage.getItem('shoppingCart'));
+console.log(storedCart)
+
+
+
 // class Product {
 //     constructor(id, itemName, price){
 //         this.id = id
@@ -11,38 +25,31 @@
 // const product3 = new Product(3, 'Campera', 34000)
 // const product4 = new Product(4, 'Top', 9000)
 
-const getStock = async () => {
-    const response = await fetch("../data/data.json")
-    return await response.json()
-}
-
-const stock = await getStock()
-
 // const stock = [product1, product2, product3, product4]
 
-const shoppingCart = []
 
-for (let i = 0; i < stock.length; i++) {
-    let button = document.getElementById('button' + i)
-    button.addEventListener('click', () => addToCart(stock[i]))
+// for (let i = 0; i < stock.length; i++) {
+//     let button = document.getElementById('button' + i)
+//     button.addEventListener('click', () => addToCart(stock[i]))
 
-    let productDescription = document.getElementById("product" + (i + 1))
-    productDescription.textContent = stock[i].itemName + ' $' + stock[i].price
-}
+//     let productDescription = document.getElementById("product" + (i + 1))
+//     productDescription.textContent = stock[i].itemName + ' $' + stock[i].price
+// }
 
-function addToCart(product) {
-    shoppingCart.push(product)
-    let notification = document.getElementById('notification')
-    let cartTotal = shoppingCart.reduce((total, product) => total + product.price, 0)
-    notification.textContent = 'Se agregó un(a) ' + product.itemName + ' al carrito. Subtotal: $' + cartTotal
-    notification.classList.remove('itemAdded')
-    void notification.offsetWidth
-    notification.classList.add('itemAdded')
-    let cartIcon = document.getElementById('cartIcon')
-    cartIcon.classList.remove('fa-cart-shopping')
-    cartIcon.classList.add('fa-cart-plus')
-    console.log(shoppingCart)
-}
+// function addToCart(product) {
+//     shoppingCart.push(product)
+//     let notification = document.getElementById('notification')
+//     let cartTotal = shoppingCart.reduce((total, product) => total + product.price, 0)
+//     notification.textContent = 'Se agregó un(a) ' + product.itemName + ' al carrito. Subtotal: $' + cartTotal
+//     notification.classList.remove('itemAdded')
+//     void notification.offsetWidth
+//     notification.classList.add('itemAdded')
+//     let cartIcon = document.getElementById('cartIcon')
+//     cartIcon.classList.remove('fa-cart-shopping')
+//     cartIcon.classList.add('fa-cart-plus')
+//     console.log(shoppingCart)
+// }
+
 
 
 // function addToCart(product) {
