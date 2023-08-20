@@ -2,7 +2,6 @@
 
 // Obtener los datos del localStorage
 const cartItems = JSON.parse(localStorage.getItem("shoppingCart")) || [];
-console.log(cartItems)
 
 // Crear una función para agrupar los productos por ID y sumar las cantidades
 function groupAndSumItems(cartItems) {
@@ -41,8 +40,12 @@ function renderCart(cartItems) {
                 <p class="item-price">$${item.price.toFixed(2)}</p>
                 <p class="item-quantity">Cantidad: ${item.quantity}</p>
                 <p class="item-total-price">Total: $${itemTotalPrice.toFixed(2)}</p>
+                <button id="delete${item.id}FromCart" class="btn btn-info">Eliminar producto del carrito</button>
             </div>
         `;
+
+        const deleteButton = cartItemDiv.querySelector(`#delete${item.id}FromCart`);
+        deleteButton.addEventListener("click", () => deleteFromCart(item));
 
         cartSection.appendChild(cartItemDiv);
     });
@@ -55,15 +58,29 @@ function renderCart(cartItems) {
     cartTotalDiv.innerHTML = `
         <p class="subtotal">Subtotal: $${subtotal.toFixed(2)}</p>
         <p class="total">Total (IVA incluido): $${total.toFixed(2)}</p>
+        <button id="clearCartButton" class="btn btn-info">Limpiar carrito de compras</button>
     `;
 
     cartSection.appendChild(cartTotalDiv);
 }
 
-// Agrupar productos y llamar a la función para renderizar el carrito
+// Llamar a la función para renderizar el carrito
 const groupedCartItems = groupAndSumItems(cartItems);
 renderCart(groupedCartItems);
 
+function deleteFromCart(item) {
+    const updatedCartItems = cartItems.filter(cartItem => cartItem.id !== item.id);
+    localStorage.setItem("shoppingCart", JSON.stringify(updatedCartItems));
+    location.reload(); // Recargar la página para reflejar los cambios
+}
+
+const clearCartButton = document.getElementById("clearCartButton")
+clearCartButton.addEventListener("click", () => clearCart())
+
+function clearCart() {
+    localStorage.clear()
+    location.reload()
+}
 
 
 
