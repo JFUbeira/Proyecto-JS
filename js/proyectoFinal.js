@@ -5,6 +5,10 @@ const getStock = async () => {
 
 const stock = await getStock()
 
+for (let i = 0; i < stock.length; i++) {
+    let productDescription = document.getElementById("product" + (i + 1))
+    productDescription.textContent = stock[i].itemName + ' $' + stock[i].price
+}
 const shoppingCart = []
 
 const storedCart = JSON.parse(localStorage.getItem('shoppingCart'));
@@ -13,7 +17,7 @@ console.log(storedCart)
 
 
 // class Product {
-//     constructor(id, itemName, price){
+    //     constructor(id, itemName, price){
 //         this.id = id
 //         this.itemName = itemName
 //         this.price = parseFloat(price)
@@ -28,13 +32,6 @@ console.log(storedCart)
 // const stock = [product1, product2, product3, product4]
 
 
-// for (let i = 0; i < stock.length; i++) {
-//     let button = document.getElementById('button' + i)
-//     button.addEventListener('click', () => addToCart(stock[i]))
-
-//     let productDescription = document.getElementById("product" + (i + 1))
-//     productDescription.textContent = stock[i].itemName + ' $' + stock[i].price
-// }
 
 // function addToCart(product) {
 //     shoppingCart.push(product)
