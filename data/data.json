@@ -5,28 +5,28 @@
         "price": 7500,
         "quantity": 1,
         "imgUrl": "https://jfubeira.github.io/Proyecto-JS/images/merch1f.png",
-        "img2Url": "../images/merch1b.png"       
+        "img2Url": "https://jfubeira.github.io/Proyecto-JS/images/merch1b.png"       
     },
     {
         "id": 2,
         "itemName": "Buzo",
         "price": 19000,
         "quantity": 1,
-        "imgUrl": "../images/merch2f.png",
-        "img2Url": "../images/merch2b.png"         
+        "imgUrl": "https://jfubeira.github.io/Proyecto-JS/images/merch2f.png",
+        "img2Url": "https://jfubeira.github.io/Proyecto-JS/images/merch2b.png"         
     },    {
         "id": 3,
         "itemName": "Campera",
         "price": 34000,
         "quantity": 1,
-        "imgUrl": "../images/merch3f.png",
-        "img2Url": "../images/merch3b.png"         
+        "imgUrl": "https://jfubeira.github.io/Proyecto-JS/images/merch3f.png" ,
+        "img2Url": "https://jfubeira.github.io/Proyecto-JS/images/merch3b.png"         
     },    {
         "id": 4,
         "itemName": "Top",
         "price": 9000,
         "quantity": 1,
-        "imgUrl": "../images/merch4f.png",
-        "img2Url": "../images/merch4b.png"         
+        "imgUrl": "https://jfubeira.github.io/Proyecto-JS/images/merch4f.png" ,
+        "img2Url": "https://jfubeira.github.io/Proyecto-JS/images/merch4b.png"         
     }
 ]
