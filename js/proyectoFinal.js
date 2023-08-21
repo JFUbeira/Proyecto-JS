@@ -1,5 +1,5 @@
 const getStock = async () => {
-    const response = await fetch("../data/data.json")
+    const response = await fetch("https://jfubeira.github.io/Proyecto-JS/data/data.json")
     return await response.json()
 }
 

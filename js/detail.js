@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const getProduct = async (pid) => {
-        const response = await fetch("../data/data.json")
+        const response = await fetch("https://jfubeira.github.io/Proyecto-JS/data/data.json")
         const data = await response.json()
         return data.find(product => product.id === pid)
     };
