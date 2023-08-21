@@ -4,7 +4,7 @@
         "itemName": "Remera",
         "price": 7500,
         "quantity": 1,
-        "imgUrl": "../images/merch1f.png",
+        "imgUrl": "https://jfubeira.github.io/Proyecto-JS/images/merch1f.png",
         "img2Url": "../images/merch1b.png"       
     },
     {
