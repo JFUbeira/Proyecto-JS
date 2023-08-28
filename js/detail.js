@@ -50,6 +50,11 @@ function addToCart(product) {
     currentCart.push(product)
     localStorage.setItem('shoppingCart', JSON.stringify(currentCart))
     console.log(currentCart)
+    Toastify({
+    text: 'Se agregó el producto al carrito. Haz click para ver el carrito ->',
+    duration: 3000,
+    destination: '../cart.html'  
+    }).showToast()
 }
 
 
