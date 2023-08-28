@@ -53,7 +53,7 @@ function addToCart(product) {
     
     // Obtener la URL base de GitHub Pages
     const baseUrl = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
-    const cartPageUrl = baseUrl + 'cart.html'; // Agregar la ruta relativa a la página del carrito
+    const cartPageUrl = baseUrl + '../cart.html'; // Agregar la ruta relativa a la página del carrito
     
     Toastify({
         text: 'Se agregó el producto al carrito. Haz click para ver el carrito ->',
