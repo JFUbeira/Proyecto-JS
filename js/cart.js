@@ -61,9 +61,28 @@ const groupedCartItems = groupAndSumItems(cartItems)
 renderCart(groupedCartItems)
 
 function deleteFromCart(item) {
-    const updatedCartItems = cartItems.filter(cartItem => cartItem.id !== item.id)
-    localStorage.setItem("shoppingCart", JSON.stringify(updatedCartItems))
-    location.reload()
+    Swal.fire({
+        text: '¿Está seguro que desea quitar este producto del carrito?',
+        icon: 'alert',
+        showCancelButton: true,
+        confirmButtonText: 'Quitar del carrito',
+        cancelButtonText: 'Cancelar'
+    })
+    .then( resultado => {
+        if (resultado.isConfirmed) {
+            Swal.fire({
+                icon: 'success',
+                text: 'Se ha quitado este producto del carrito',
+                showCancelButton: false,
+                showConfirmButton: false
+            })  
+            const updatedCartItems = cartItems.filter(cartItem => cartItem.id !== item.id)
+            localStorage.setItem("shoppingCart", JSON.stringify(updatedCartItems))
+            setTimeout(()=>{
+                location.reload()
+            }, 2000)
+        }
+    })
 }
 
 const clearCartButton = document.getElementById("clearCartButton")
@@ -74,8 +93,8 @@ function clearCart() {
         text: '¿Está seguro que desea limpiar el carrito?',
         icon: 'alert',
         showCancelButton: true,
-        confirmButtonText: 'Limpiar carrito', // true
-        cancelButtonText: 'Cancelar' // false
+        confirmButtonText: 'Limpiar carrito',
+        cancelButtonText: 'Cancelar'
     })
     .then( resultado => {
         if (resultado.isConfirmed) {
@@ -88,7 +107,7 @@ function clearCart() {
             localStorage.clear()
             setTimeout(()=>{
                 location.reload()
-            }, 2500)
+            }, 2000)
         }
     })
 }
