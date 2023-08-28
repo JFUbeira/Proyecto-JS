@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="product-details">
                 <h2>${product.itemName}</h2>
                 <h3>$${product.price}</h3>
-                <img src="${product.imgUrl}" alt="${product.itemName} Image">
+                <img src="${product.imgUrl}" alt="${product.itemName} Image" class="imgSize">
                 <div>
                     <button id="addToCartButton" class="btn btn-info">Agregar al carrito</button>
                 </div>   
@@ -46,35 +46,33 @@ const stock = await getStock()
 const shoppingCart = []
 
 function addToCart(product) {
-    let currentCart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
-    currentCart.push(product);
-    localStorage.setItem('shoppingCart', JSON.stringify(currentCart));
-    console.log(currentCart);
-    
-    // Obtener la URL base de GitHub Pages
-    const baseUrl = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
-    const cartPageUrl = baseUrl + '../cart.html'; // Agregar la ruta relativa a la página del carrito
-    
+    let currentCart = JSON.parse(localStorage.getItem('shoppingCart')) || []
+    currentCart.push(product)
+    localStorage.setItem('shoppingCart', JSON.stringify(currentCart))
+    console.log(currentCart)
     Toastify({
         text: 'Se agregó el producto al carrito. Haz click para ver el carrito ->',
         duration: 3000,
-        destination: cartPageUrl
-    }).showToast();
-}
+        destination: '../cart.html'  
+        }).showToast()
+    }
 
 
-
-
-// function addToCart(product) {
-//     let currentCart = JSON.parse(localStorage.getItem('shoppingCart')) || []
-//     currentCart.push(product)
-//     localStorage.setItem('shoppingCart', JSON.stringify(currentCart))
-//     console.log(currentCart)
-//     Toastify({
-//     text: 'Se agregó el producto al carrito. Haz click para ver el carrito ->',
-//     duration: 3000,
-//     destination: '../cart.html'  
-//     }).showToast()
-// }
-
-
+    // function addToCart(product) {
+    //     let currentCart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    //     currentCart.push(product);
+    //     localStorage.setItem('shoppingCart', JSON.stringify(currentCart));
+    //     console.log(currentCart);
+        
+    //     // Obtener la URL base de GitHub Pages
+    //     const baseUrl = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+    //     const cartPageUrl = baseUrl + '../cart.html'; // Agregar la ruta relativa a la página del carrito
+        
+    //     Toastify({
+    //         text: 'Se agregó el producto al carrito. Haz click para ver el carrito ->',
+    //         duration: 3000,
+    //         destination: cartPageUrl
+    //     }).showToast();
+    // }
+    
+    

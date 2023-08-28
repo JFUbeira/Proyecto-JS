@@ -89,6 +89,10 @@
     width: auto;
 }
 
+.imgSize{
+    height: 300px;
+}
+
 @keyframes showUp {
     0% {
         opacity: 100;
