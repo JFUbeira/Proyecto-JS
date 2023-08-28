@@ -53,7 +53,7 @@ function addToCart(product) {
     Toastify({
         text: 'Se agregó el producto al carrito. Haz click para ver el carrito ->',
         duration: 3000,
-        destination: '../cart.html'  
+        destination: "/cart.html"  
         }).showToast()
     }
 
